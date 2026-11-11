@@ -21,7 +21,7 @@ Commands work in Git Bash and PowerShell. The exit code is `echo $?` in Git Bash
 
 | Do | It worked if |
 |---|---|
-| `java -version` | it shows `25` |
+| `java -version` | it shows `22` or newer |
 | `java backend/InventoryTest.java` | about 250 `[debug]` lines, six `ok` lines, then `OK` |
 | `java backend/Server.java` | http://localhost:8000 shows the item list (keep the terminal open, stop with Ctrl+C) |
 | `claude` in a second terminal | Claude Code starts in this folder |
