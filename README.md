@@ -34,7 +34,7 @@ Run both from the repo root: the server looks for `frontend/` relative to the cu
 ```
 backend/            Server.java (API + frontend), Inventory.java, InventoryTest.java (chatty on purpose)
 frontend/           static page that calls the API
-tools/status-line/  status line showing the prompt cache (slide 45)
+tools/status-line/  status line showing the prompt cache
 AGENTS.md           instructions for coding agents, checked against the AGENTS.md rules
 docs/               exercises.md (overview per slide), runbook.md (steps and checks)
 .claude/
@@ -48,7 +48,7 @@ docs/               exercises.md (overview per slide), runbook.md (steps and che
 
 The exercises come from the slides; the repo provides what they need. Overview: [docs/exercises.md](docs/exercises.md).
 
-**Chapter 05 Hooks (slide 34):** three exercises, one optional for fast groups or for later
+**Chapter 05 Hooks:** three exercises, one optional for fast groups or for later
 
 | # | Hook | Event | Task |
 |---|---|---|---|
