@@ -2,15 +2,15 @@
 
 Small warehouse app in Java with a rule-compliant AGENTS.md and a hard-coded API key. You build the hooks yourself.
 
-**Requirements:** JDK 25, git and Claude Code. No build tool: to keep the lab simple, every program runs straight from source, e.g. `java backend/Server.java` (JDK 22+).
+**Requirements:** JDK 22 or newer (we recommend 25, the current LTS), git and Claude Code. No build tool: to keep the lab simple, every program runs straight from source, e.g. `java backend/Server.java`.
 
 ## Check Java first
 
 ```bash
-java -version          # must show 25
+java -version          # must show 22 or newer
 ```
 
-Shows 21 or older? Then `java backend/Server.java` fails with `cannot find symbol … class Inventory` (German JDK: `Symbol nicht gefunden`). Older JDKs compile only the one file you start, not its neighbours. Install JDK 25:
+Shows 21 or older? Then `java backend/Server.java` fails with `cannot find symbol … class Inventory` (German JDK: `Symbol nicht gefunden`). Older JDKs compile only the one file you start, not its neighbours. Install JDK 25 (any JDK from 22 on works):
 
 | OS | Install | Which `java` comes first? |
 |---|---|---|
@@ -18,7 +18,7 @@ Shows 21 or older? Then `java backend/Server.java` fails with `cannot find symbo
 | macOS | `brew install --cask temurin@25` | `which java` |
 | Linux | `sdk install java 25-tem` (SDKMAN) or your package manager | `which java` |
 
-Then **close the whole program your terminal runs in** (VS Code with all its windows, Windows Terminal, IntelliJ, …) and start it again: a new tab keeps the old `PATH`. Check `java -version` again. Still the old version? An older JDK is earlier on the `PATH`: move JDK 25 to the front or remove the old one.
+Then **close the whole program your terminal runs in** (VS Code with all its windows, Windows Terminal, IntelliJ, …) and start it again: a new tab keeps the old `PATH`. Check `java -version` again. Still the old version? An older JDK is earlier on the `PATH`: move the new JDK to the front or remove the old one.
 
 ## Start
 
@@ -85,7 +85,7 @@ echo '{"hook_event_name":"UserPromptSubmit","prompt":"Refund to DE89 3704 0044 0
 | Problem | Cause | Fix |
 |---|---|---|
 | `cannot find symbol … class Inventory` (`Symbol nicht gefunden`) | JDK older than 22 | see [Check Java first](#check-java-first) |
-| `java -version` still shows 21 after installing 25 | the program your terminal runs in keeps the old `PATH` | close it completely (VS Code: all windows) and start it again |
+| `java -version` still shows 21 after installing a newer JDK | the program your terminal runs in keeps the old `PATH` | close it completely (VS Code: all windows) and start it again |
 | `BindException: Address already in use` | port 8000 is taken | Git Bash: `PORT=8001 java backend/Server.java`, PowerShell: `$env:PORT=8001; java backend/Server.java` |
 | http://localhost:8000 shows `not found` | server started from another folder, e.g. `backend/` | stop it and start `java backend/Server.java` from the repo root |
 | Hook does not run at all | not registered, `settings.json` is invalid JSON, or Claude started before the change | `/hooks` in Claude lists the active hooks; restart `claude` |
