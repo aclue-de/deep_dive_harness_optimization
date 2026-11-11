@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * Usage:  java CheckAgentsMd.java [path/to/AGENTS.md]
  * Output: one line per finding (VIOLATION / WARNING). Exit code 0 = passed, 1 = violations found.
  *
- * Used by the skill agents-md-review; a hook can call it the same way.
+ * Used by the skill agents-md-review and by the hook .claude/hooks/AgentsMdGate.java.
  * No LLM, no network, JDK only.
  */
 public class CheckAgentsMd {

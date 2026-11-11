@@ -1,6 +1,6 @@
 ---
 name: agents-md-reviewer
-description: Reviews AGENTS.md against the AGENTS.md rules of this repo and reports what is wrong, where, and what to do about it. Use when a hook reports AGENTS.md violations, or when asked for a review of AGENTS.md. Read-only.
+description: Reviews AGENTS.md against the AGENTS.md rules of this repo and reports what is wrong, where, and what to do about it. Use when the AGENTS.md gate hook reports violations, or when asked for a review of AGENTS.md. Read-only.
 tools: Read, Grep, Glob, Bash
 model: sonnet
 skills:

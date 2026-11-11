@@ -2,5 +2,50 @@
   "permissions": {
     "defaultMode": "default"
   },
-  "hooks": {}
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/PromptSecretGuard.java\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/AgentsMdGate.java\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/HarnessGuard.java\"",
+            "onFailure": "block"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java \"$CLAUDE_PROJECT_DIR/.claude/hooks/Notify.java\"",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
 }

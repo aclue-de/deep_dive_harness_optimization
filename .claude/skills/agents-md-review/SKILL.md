@@ -1,6 +1,6 @@
 ---
 name: agents-md-review
-description: Review an AGENTS.md against the AGENTS.md rules (size, plain Markdown, Always / Ask first / Never boundaries, failure protocol, no inferable content). Use when AGENTS.md is created or changed, when a hook reports AGENTS.md violations, or when asked whether AGENTS.md follows the rules.
+description: Review an AGENTS.md against the AGENTS.md rules (size, plain Markdown, Always / Ask first / Never boundaries, failure protocol, no inferable content). Use when AGENTS.md is created or changed, when the AGENTS.md gate hook reports violations, or when asked whether AGENTS.md follows the rules.
 ---
 
 # AGENTS.md review
