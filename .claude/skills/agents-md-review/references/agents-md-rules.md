@@ -1,9 +1,6 @@
 # AGENTS.md rules
 
-The rules this repo uses to judge an AGENTS.md. They build on two public sources:
-
-- [agents.md](https://agents.md): the open format, a plain Markdown file in the repository root that many coding agents read.
-- Gloaguen et al., *Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?* ([arXiv:2602.11988](https://arxiv.org/abs/2602.11988), 2026): context files raise inference cost by over 20% on average and do not reliably raise task success. Every line has to earn its place.
+The rules this repo uses to judge an AGENTS.md. Every line costs tokens on every run, so every line has to earn its place.
 
 ## Form
 
