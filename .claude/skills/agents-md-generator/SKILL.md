@@ -9,10 +9,8 @@ Create a compliant AGENTS.md for the current repository through a phased pipelin
  
 ## Hard Rules
  
-These constraints follow the open AGENTS.md format (agents.md) and research on context files (arXiv:2602.11988).
- 
 - Plain Markdown only. No tool-specific syntax (`@workspace`, `@codebase`, `@cursor`, `@file`, `#file`, `<tool_use>`, `@terminal`). Tool-specific syntax fragments the file across tooling choices — AGENTS.md is read by all major AI coding tools, so it must stay tool-agnostic.
-- Maximum 200 lines. Target 100-120 lines. Files approaching 200 lines almost always contain inferable content. Studies show that bloated context files increase inference costs >20% and reduce task success rates (arXiv:2602.11988).
+- Maximum 200 lines. Target 100-120 lines. Files approaching 200 lines almost always contain inferable content.
 - Only non-inferable content. Exclude anything the agent can derive from the repo: directory structure, tech stack stated in manifests, style rules enforced by linters, boilerplate descriptions of the project. Duplicating what the agent can already derive wastes tokens and actively hurts performance.
 - Include an explicit instruction to derive framework, language, and infrastructure versions from build and configuration files (e.g., `build.gradle.kts`, `pom.xml`, `package.json`, `docker-compose.yml`) rather than falling back to training-data defaults.
 - Three behavioral boundary tiers required: **Always**, **Ask first**, **Never**. Each item must name a specific action, command, file, or tool — never a vague principle. Without explicit tiers, agents default to asking about everything (too cautious) or acting on everything (too risky). Named tiers let the agent self-classify actions.
