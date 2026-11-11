@@ -1,0 +1,2 @@
+# LF everywhere: files are used in the Linux container, also when checked out on Windows
+* text=auto eol=lf

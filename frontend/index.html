@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warehouse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Warehouse</h1>
+    <p id="message"></p>
+
+    <table>
+      <thead><tr><th>SKU</th><th>Item</th><th>Stock</th><th>Book</th></tr></thead>
+      <tbody id="items"></tbody>
+    </table>
+
+    <h2>New item</h2>
+    <form id="new-item">
+      <input name="sku" placeholder="SKU, e.g. D-400" required>
+      <input name="name" placeholder="Name" required>
+      <input name="quantity" type="number" min="0" step="1" value="0">
+      <button type="submit">Create</button>
+    </form>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
